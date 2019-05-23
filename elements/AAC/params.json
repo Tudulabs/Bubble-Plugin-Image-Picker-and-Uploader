@@ -1,0 +1,64 @@
+{
+    "add_is_visible": true,
+    "category": "input forms",
+    "default_dim": {
+        "height": 400,
+        "width": 400
+    },
+    "display": "File Selector",
+    "events": {
+        "AAF": {
+            "caption": "images are uploaded",
+            "doc": "This occurs when the images are finished uploading to Bubble & the element's state is updated with the uploaded_files URL's",
+            "name": "images_are_uploaded"
+        }
+    },
+    "fields": {
+        "AAK": {
+            "caption": "Number of Files",
+            "default_val": 5,
+            "editor": "Dropdown",
+            "in_style": false,
+            "name": "number_of_files",
+            "options": "1,2,3,4,5,6,7,8,9,10",
+            "rank": 0,
+            "value": "number"
+        }
+    },
+    "icon": "ion-android-folder-open",
+    "property_applications": {
+        "Background": false,
+        "MinWidth": true,
+        "resizable": true
+    },
+    "states": {
+        "AAD": {
+            "caption": "files",
+            "doc": "This is the list of files that you retrieve from the users input",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "files",
+            "value": "text"
+        },
+        "AAE": {
+            "caption": "Uploaded FIles",
+            "doc": "These are the files after they have been uploaded to Bubble",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "uploaded_files",
+            "value": "text"
+        },
+        "AAJ": {
+            "caption": "All Files",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "is_list": true,
+            "name": "all_files",
+            "value": "image"
+        }
+    },
+    "support_autobinding": false
+}
