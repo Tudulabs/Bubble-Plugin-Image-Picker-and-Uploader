@@ -15,16 +15,18 @@
     },
     "fields": {
         "AAK": {
-            "caption": "Number of Files",
+            "caption": "Max number of files",
             "default_val": 5,
+            "doc": "Choose the max number of files you want a user to select",
             "editor": "Dropdown",
             "in_style": false,
-            "name": "number_of_files",
+            "name": "max_number_of_files",
             "options": "1,2,3,4,5,6,7,8,9,10",
             "rank": 0,
             "value": "number"
         }
     },
+    "has_reset_fn": false,
     "icon": "ion-android-folder-open",
     "property_applications": {
         "Background": false,
@@ -32,32 +34,26 @@
         "resizable": true
     },
     "states": {
-        "AAD": {
-            "caption": "files",
-            "doc": "This is the list of files that you retrieve from the users input",
-            "initialization_code": {
-                "fn": "function(properties, context) {\n\n\n\n}"
-            },
-            "name": "files",
-            "value": "text"
-        },
         "AAE": {
             "caption": "Uploaded FIles",
-            "doc": "These are the files after they have been uploaded to Bubble",
+            "doc": "These are the files after they have been uploaded to Bubble AWS",
             "initialization_code": {
+                "add_debugger": false,
                 "fn": "function(properties, context) {\n\n\n\n}"
             },
+            "is_list": true,
             "name": "uploaded_files",
-            "value": "text"
+            "value": "file"
         },
         "AAJ": {
             "caption": "All Files",
+            "doc": "This is the list of files that is rendered instantly, from the users files. Upload these using the upload action.",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
             },
             "is_list": true,
             "name": "all_files",
-            "value": "image"
+            "value": "file"
         }
     },
     "support_autobinding": false

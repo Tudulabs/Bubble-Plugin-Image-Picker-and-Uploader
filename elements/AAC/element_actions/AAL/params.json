@@ -1,0 +1,4 @@
+{
+    "caption": "Reset File Selection",
+    "doc": "Reset the file selection state. Clears the uploaded images state, and the all files selected state"
+}
