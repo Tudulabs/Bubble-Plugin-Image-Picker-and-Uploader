@@ -2,8 +2,8 @@
     "add_is_visible": true,
     "category": "input forms",
     "default_dim": {
-        "height": 400,
-        "width": 400
+        "height": 50,
+        "width": 50
     },
     "display": "File Selector",
     "events": {
@@ -11,6 +11,11 @@
             "caption": "images are uploaded",
             "doc": "This occurs when the images are finished uploading to Bubble & the element's state is updated with the uploaded_files URL's",
             "name": "images_are_uploaded"
+        },
+        "AAM": {
+            "caption": "has too many files",
+            "doc": "This event triggers when a user attempts to put in more files than you choose in the property editor.",
+            "name": "has_too_many_files"
         }
     },
     "fields": {
@@ -24,9 +29,19 @@
             "options": "1,2,3,4,5,6,7,8,9,10",
             "rank": 0,
             "value": "number"
+        },
+        "AAS": {
+            "caption": "File type to choose",
+            "default_val": "Images",
+            "doc": "This is the file type you want the users device to open to. This DOES not limit them from selecting other files, it just allows the device to know what to look for.",
+            "editor": "Dropdown",
+            "in_style": false,
+            "name": "file_type",
+            "options": "Images,Audio,Videos,All Files",
+            "rank": 1
         }
     },
-    "has_reset_fn": false,
+    "has_reset_fn": true,
     "icon": "ion-android-folder-open",
     "property_applications": {
         "Background": false,
@@ -54,6 +69,15 @@
             "is_list": true,
             "name": "all_files",
             "value": "file"
+        },
+        "AAN": {
+            "caption": "Files are Uploading",
+            "doc": "This state is \"Yes\" while the files are uploading",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "files_are_uploading",
+            "value": "boolean"
         }
     },
     "support_autobinding": false

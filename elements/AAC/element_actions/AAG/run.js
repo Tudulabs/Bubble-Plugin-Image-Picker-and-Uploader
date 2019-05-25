@@ -2,6 +2,14 @@ function(instance, properties, context) {
     
     instance.data.uploaded_files = []
     
+
+    if (instance.data.allFiles.length == 0)
+        {
+            alert(properties.no_files_selected_message)
+        }
+    
+    else{
+    instance.publishState('files_are_uploading' , true)
             if (instance.data.fileInput1.files.length >= 1){
 
           context.uploadContent(instance.data.fileInput1.files[0].name , instance.data.base64OfImg1 , function(err, url){
@@ -12,7 +20,8 @@ function(instance, properties, context) {
               if (instance.data.fileInput1.files.length == 1)
                   {
               instance.triggerEvent('images_are_uploaded')
-              console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
+
 
                   }
                       
@@ -31,7 +40,7 @@ context.uploadContent(instance.data.fileInput1.files[1].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -50,7 +59,8 @@ context.uploadContent(instance.data.fileInput1.files[2].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                    
+              instance.publishState('files_are_uploading' , false)
+
                   }
     
 }
@@ -67,7 +77,7 @@ context.uploadContent(instance.data.fileInput1.files[3].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -86,7 +96,7 @@ context.uploadContent(instance.data.fileInput1.files[4].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -104,7 +114,7 @@ context.uploadContent(instance.data.fileInput1.files[5].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -122,7 +132,7 @@ context.uploadContent(instance.data.fileInput1.files[6].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -141,7 +151,7 @@ context.uploadContent(instance.data.fileInput1.files[7].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -159,7 +169,7 @@ context.uploadContent(instance.data.fileInput1.files[8].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -178,7 +188,7 @@ context.uploadContent(instance.data.fileInput1.files[9].name , instance.data.bas
                   {
                       
               instance.triggerEvent('images_are_uploaded')
-                      console.log('All images are finished uploading')
+              instance.publishState('files_are_uploading' , false)
                     
                   }
     
@@ -186,5 +196,5 @@ context.uploadContent(instance.data.fileInput1.files[9].name , instance.data.bas
                       )
                 }    
     
-
+}
 }

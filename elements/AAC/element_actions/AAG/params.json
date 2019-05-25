@@ -1,4 +1,15 @@
 {
     "caption": "Upload Image(s)",
-    "doc": "Upload the files stored in the element. The uploaded files URL's are stored in the"
+    "doc": "Upload the files stored in the element. The uploaded files URL's are stored in the",
+    "fields": {
+        "AAW": {
+            "caption": "No Files Selected Message",
+            "default_val": "You haven't selected any files. Please select some files.",
+            "doc": "This message is displayed if a user tries to upload a file, if no files are selected.",
+            "editor": "DynamicValue",
+            "name": "no_files_selected_message",
+            "rank": 0,
+            "value": "text"
+        }
+    }
 }
