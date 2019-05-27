@@ -12,8 +12,9 @@ instance.data.base64OfImg9 = null
 instance.data.base64OfImg10 = null
 
 instance.data.allFiles = []
+instance.data.fileInput1.value = null
 
-    
+    console.log(instance.data.fileInput1.files.length)
 instance.publishState('all_files' , null)
 instance.publishState('uploaded_files' , null)
 

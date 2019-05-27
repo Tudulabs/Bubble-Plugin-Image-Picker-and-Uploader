@@ -1,14 +1,18 @@
 function(instance, properties, context) {
 
-//Make sure it only does this once
+
     
     if (instance.data.runOnce == 0)
         
         {
+            
+            
+            
    function updateImageDisplay()
 {
     instance.data.allFiles = []
-
+console.log(instance.data.fileInput1.value)    
+    
 if (instance.data.fileInput1.files.length > properties.max_number_of_files || instance.data.allFiles.length >= properties.max_number_of_files)
     
     //Send an event that triggers if a user has too many files
@@ -22,7 +26,6 @@ else {
             if (instance.data.fileInput1.files.length >= 1){
                     var reader1 = new FileReader();
                     reader1.readAsDataURL(instance.data.fileInput1.files[0])
-
             }
     
             if (instance.data.fileInput1.files.length >= 2){
@@ -86,7 +89,6 @@ else {
                 if (instance.data.fileInput1.files.length >= 1){
 
     reader1.onload = function (e) {
-
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader1.result)
         

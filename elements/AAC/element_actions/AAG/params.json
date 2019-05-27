@@ -8,8 +8,17 @@
             "doc": "This message is displayed if a user tries to upload a file, if no files are selected.",
             "editor": "DynamicValue",
             "name": "no_files_selected_message",
-            "rank": 0,
+            "rank": 1,
             "value": "text"
+        },
+        "AAZ": {
+            "caption": "Files to Upload",
+            "doc": "These are the files you want to upload.",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "files_to_upload",
+            "rank": 0,
+            "value": "file"
         }
     }
 }
