@@ -11,7 +11,6 @@ function(instance, properties, context) {
    function updateImageDisplay()
 {
     instance.data.allFiles = []
-console.log(instance.data.fileInput1.value)    
     
 if (instance.data.fileInput1.files.length > properties.max_number_of_files || instance.data.allFiles.length >= properties.max_number_of_files)
     
@@ -26,6 +25,7 @@ else {
             if (instance.data.fileInput1.files.length >= 1){
                     var reader1 = new FileReader();
                     reader1.readAsDataURL(instance.data.fileInput1.files[0])
+                console.log('Just read the file')
             }
     
             if (instance.data.fileInput1.files.length >= 2){
@@ -97,7 +97,6 @@ else {
         //Extracted the base64 part of the image and set a bubble variable equal to the base64 of the image.     
 
         instance.data.base64OfImg1 = reader1.result.split(',')[1]
-        
 
 
     }    

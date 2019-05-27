@@ -5,7 +5,7 @@
         "height": 50,
         "width": 50
     },
-    "display": "File Selector",
+    "display": "File Selector & Uploader",
     "events": {
         "AAF": {
             "caption": "images are uploaded",
@@ -22,7 +22,7 @@
         "AAK": {
             "caption": "Max number of files",
             "default_val": 5,
-            "doc": "Choose the max number of files you want a user to select",
+            "doc": "Choose the max number of files you want a user to select. If you select 1, the user will only be able to choose 1 image. ",
             "editor": "Dropdown",
             "in_style": false,
             "name": "max_number_of_files",
@@ -33,7 +33,7 @@
         "AAS": {
             "caption": "File type to choose",
             "default_val": "Images",
-            "doc": "This is the file type you want the users device to open to. This DOES not limit them from selecting other files, it just allows the device to know what to look for.",
+            "doc": "This is the File Type you want the users device to open to. This DOES not limit them from selecting other files, it just allows the device to know what to look for.",
             "editor": "Dropdown",
             "in_style": false,
             "name": "file_type",
@@ -51,7 +51,7 @@
     "states": {
         "AAE": {
             "caption": "Uploaded FIles",
-            "doc": "These are the files after they have been uploaded to Bubble AWS",
+            "doc": "These are the files after they have been uploaded to Bubble Storage.",
             "initialization_code": {
                 "add_debugger": false,
                 "fn": "function(properties, context) {\n\n\n\n}"
@@ -62,7 +62,7 @@
         },
         "AAJ": {
             "caption": "All Files",
-            "doc": "This is the list of files that is rendered instantly, from the users files. Upload these using the upload action.",
+            "doc": "This is the list of files that is rendered instantly, from the users files. You can display these in any Bubble Element you want.",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
             },
@@ -72,7 +72,7 @@
         },
         "AAN": {
             "caption": "Files are Uploading",
-            "doc": "This state is \"Yes\" while the files are uploading",
+            "doc": "This state is \"Yes\" while the files are uploading.",
             "initialization_code": {
                 "fn": "function(properties, context) {\n\n\n\n}"
             },

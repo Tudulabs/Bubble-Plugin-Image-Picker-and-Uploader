@@ -7,7 +7,6 @@ function(instance, properties, context) {
     instance.data.uploaded_files = []
     
     
-    console.log(instance.data.filesSelected.length)
     
     if (instance.data.filesSelected.length < 1){
             alert(properties.no_files_selected_message)
@@ -30,8 +29,10 @@ function(instance, properties, context) {
               instance.data.uploaded_files.push(url)
               instance.publishState('uploaded_files' , instance.data.uploaded_files)
               
-              if (instance.data.fileInput1.files.length == 1)
+              if (instance.data.filesSelected.length == 1)
                   {
+                                            console.log("uploaded")
+
               instance.triggerEvent('images_are_uploaded')
               instance.publishState('files_are_uploading' , false)
 
@@ -61,7 +62,7 @@ context.uploadContent('file.' + instance.data.file2FileType.split('/')[1] , inst
 
               if (instance.data.filesSelected.length == 2)
                   {
-                      
+                      console.log("uploaded")
               instance.triggerEvent('images_are_uploaded')
               instance.publishState('files_are_uploading' , false)
                     
