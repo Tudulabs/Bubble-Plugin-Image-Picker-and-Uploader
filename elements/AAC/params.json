@@ -94,6 +94,15 @@
             },
             "name": "files_are_uploading",
             "value": "boolean"
+        },
+        "AAc": {
+            "caption": "Files are rendering",
+            "doc": "This state is \"Yes\" right after a user chooses files, and is \"No\" when the images are loaded into the \"File Selector & Uploader's\" 'uploaded_files state.",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    var falseState = false\n\n\n    return falseState\n\n}"
+            },
+            "name": "files_are_rendering",
+            "value": "boolean"
         }
     },
     "support_autobinding": false

@@ -11,7 +11,6 @@ function(instance, properties, context) {
    function updateImageDisplay()
 {
     instance.data.allFiles = []
-    console.log(instance.data.fileInput1.files[0].size / 1000000)
     
 if (instance.data.fileInput1.files.length > properties.max_number_of_files || instance.data.allFiles.length >= properties.max_number_of_files)
     
@@ -24,7 +23,6 @@ if (instance.data.fileInput1.files.length > properties.max_number_of_files || in
     
 else if (properties.file_type == 'Images' && instance.data.fileInput1.files[0].type.includes("image") == false)
            {
-               console.log(instance.data.fileInput1.files)
                                 window.alert('You can only choose images.')
            }   
     
@@ -46,6 +44,8 @@ else if (properties.max_file_size <= instance.data.fileInput1.files[0].size / 10
     
 //create a fileReader for each file inputted.
 else {
+    instance.publishState('files_are_rendering', true)
+    
             if (instance.data.fileInput1.files.length >= 1){
                     var reader1 = new FileReader();
                     reader1.readAsDataURL(instance.data.fileInput1.files[0])
@@ -120,13 +120,17 @@ else {
     reader1.onload = function (e) {
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader1.result)
-        console.log(reader1)
         
         instance.publishState('all_files' , instance.data.allFiles)
+
         
         //Extracted the base64 part of the image and set a bubble variable equal to the base64 of the image.     
 
         instance.data.base64OfImg1 = reader1.result.split(',')[1]
+        
+        if(instance.data.fileInput1.files.length == 1){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     }    
@@ -143,6 +147,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg2 = reader2.result.split(',')[1]
+        
+         if(instance.data.fileInput1.files.length == 2){
+                instance.publishState('files_are_rendering', false)
+    }
 
     }
 
@@ -159,6 +167,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg3 = reader3.result.split(',')[1]
+        
+        if(instance.data.fileInput1.files.length == 3){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     }   
@@ -174,6 +186,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg4 = reader4.result.split(',')[1]
+         
+         if(instance.data.fileInput1.files.length == 4){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     } 
@@ -194,6 +210,9 @@ else {
 
         instance.data.base64OfImg5 = reader5.result.split(',')[1]
 
+         if(instance.data.fileInput1.files.length == 5){
+                instance.publishState('files_are_rendering', false)
+    }
 
     }   
       
@@ -212,6 +231,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
         
         instance.data.base64OfImg6 = reader6.result.split(',')[1]
+          
+          if(instance.data.fileInput1.files.length == 6){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     }   
@@ -230,6 +253,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg7 = reader7.result.split(',')[1]
+          
+          if(instance.data.fileInput1.files.length == 7){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     } 
@@ -249,6 +276,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
   
         instance.data.base64OfImg8 = reader8.result.split(',')[1]
+          
+          if(instance.data.fileInput1.files.length == 8){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     } 
@@ -267,6 +298,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg9 = reader9.result.split(',')[1]
+          
+          if(instance.data.fileInput1.files.length == 9){
+                instance.publishState('files_are_rendering', false)
+    }
 
 
     } 
@@ -285,6 +320,10 @@ else {
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg10 = reader10.result.split(',')[1]
+          
+          if(instance.data.fileInput1.files.length == 10){
+                instance.publishState('files_are_rendering', false)
+    }
            
        }
 
