@@ -11,11 +11,6 @@
             "caption": "images are uploaded",
             "doc": "This occurs when the images are finished uploading to Bubble & the element's state is updated with the uploaded_files URL's",
             "name": "images_are_uploaded"
-        },
-        "AAM": {
-            "caption": "has too many files",
-            "doc": "This event triggers when a user attempts to put in more files than you choose in the property editor.",
-            "name": "has_too_many_files"
         }
     },
     "fields": {
@@ -39,6 +34,15 @@
             "name": "file_type",
             "options": "Images,Audio,Videos,All Files",
             "rank": 1
+        },
+        "AAa": {
+            "caption": "Too many files message",
+            "default_val": "Too many files.",
+            "doc": "This is the message that is displayed when user tries to select too many files.",
+            "editor": "DynamicValue",
+            "name": "too_many_files_message",
+            "rank": 2,
+            "value": "text"
         }
     },
     "has_reset_fn": true,

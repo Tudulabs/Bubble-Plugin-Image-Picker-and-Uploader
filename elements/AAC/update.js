@@ -17,15 +17,40 @@ if (instance.data.fileInput1.files.length > properties.max_number_of_files || in
     //Send an event that triggers if a user has too many files
     
     {        
-                      instance.triggerEvent('has_too_many_files')
+                      window.alert(properties.too_many_files_message)
     }
+    
+    
+else if (properties.file_type == 'Images' && instance.data.fileInput1.files[0].type.includes("image") == false)
+           {
+               console.log(instance.data.fileInput1.files)
+                                window.alert('You can only choose images.')
+           }   
+    
+else if (properties.file_type == 'Videos' && instance.data.fileInput1.files[0].type.includes("video") == false)
+           {
+                                window.alert('You can only choose videos.')
+           }   
+    
+else if (properties.file_type == 'Audio' && instance.data.fileInput1.files[0].type.includes("audio") == false)
+           {
+                                window.alert('You can only choose audio files.')
+           }   
+    
+    
+  
     
 //create a fileReader for each file inputted.
 else {
             if (instance.data.fileInput1.files.length >= 1){
                     var reader1 = new FileReader();
                     reader1.readAsDataURL(instance.data.fileInput1.files[0])
-                console.log('Just read the file')
+               
+                instance.data.fileType = instance.data.fileInput1.files[0].type
+                
+                
+                    
+
             }
     
             if (instance.data.fileInput1.files.length >= 2){
@@ -91,6 +116,7 @@ else {
     reader1.onload = function (e) {
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader1.result)
+        console.log(reader1)
         
         instance.publishState('all_files' , instance.data.allFiles)
         
