@@ -2,7 +2,7 @@ function(instance, properties, context) {
 
     
     //TODO - ADD A FILE LIMITER THAT ONLY ALLOWS FILES OF 45mb OR LESS. BUBBLE CANT HANDLE MORE THAN THAT.
-    //THIS SHIT IS ALL FUCKED UP FUCKING FUCK FFS THE MAIN DECLARATIONS GOT FUCKED!
+    
     instance.data.filesSelected = properties.files_to_upload.get(0,10)
     instance.data.uploaded_files = []
     
