@@ -28,7 +28,7 @@
         "AAS": {
             "caption": "File type to choose",
             "default_val": "Images",
-            "doc": "This is the File Type you want the users device to open to. This DOES not limit them from selecting other files, it just allows the device to know what to look for.",
+            "doc": "This is the File Type you want the users device to open to.",
             "editor": "Dropdown",
             "in_style": false,
             "name": "file_type",
@@ -43,6 +43,18 @@
             "name": "too_many_files_message",
             "rank": 2,
             "value": "text"
+        },
+        "AAb": {
+            "caption": "Max File SIze (mb)",
+            "default_val": 40,
+            "doc": "This is the maximum file size a user should have. Bubble can only handle up to 40mb safely.",
+            "editor": "Dropdown",
+            "in_style": false,
+            "name": "max_file_size",
+            "optional": false,
+            "options": "40,35,30,25,20,15,10,5,3,2,1",
+            "rank": 3,
+            "value": "number"
         }
     },
     "has_reset_fn": true,

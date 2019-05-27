@@ -11,6 +11,7 @@ function(instance, properties, context) {
    function updateImageDisplay()
 {
     instance.data.allFiles = []
+    console.log(instance.data.fileInput1.files[0].size / 1000000)
     
 if (instance.data.fileInput1.files.length > properties.max_number_of_files || instance.data.allFiles.length >= properties.max_number_of_files)
     
@@ -37,7 +38,10 @@ else if (properties.file_type == 'Audio' && instance.data.fileInput1.files[0].ty
                                 window.alert('You can only choose audio files.')
            }   
     
-    
+else if (properties.max_file_size <= instance.data.fileInput1.files[0].size / 1000000)
+    {
+        window.alert("File size is too big. The limit is " + properties.max_file_size + "mb")
+    }
   
     
 //create a fileReader for each file inputted.
