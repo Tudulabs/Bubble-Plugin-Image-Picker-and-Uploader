@@ -11,7 +11,8 @@ function(instance, properties, context) {
    function updateImageDisplay()
 {
     instance.data.allFiles = []
-    
+    instance.data.allFilesFilename = []
+    console.log(instance.data.fileInput1.files[0].type)
 if (instance.data.fileInput1.files.length > properties.max_number_of_files || instance.data.allFiles.length >= properties.max_number_of_files)
     
     //Send an event that triggers if a user has too many files
@@ -35,6 +36,12 @@ else if (properties.file_type == 'Audio' && instance.data.fileInput1.files[0].ty
            {
                                 window.alert('You can only choose audio files.')
            }   
+    
+else if (properties.file_type == 'PDF' && instance.data.fileInput1.files[0].type.includes("pdf") == false)
+           {
+                                window.alert('You can only choose PDF files.')
+           }   
+    
     
 else if (properties.max_file_size <= instance.data.fileInput1.files[0].size / 1000000)
     {
@@ -120,16 +127,20 @@ else {
     reader1.onload = function (e) {
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader1.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[0].name)
         
-        instance.publishState('all_files' , instance.data.allFiles)
-
+        
         
         //Extracted the base64 part of the image and set a bubble variable equal to the base64 of the image.     
 
         instance.data.base64OfImg1 = reader1.result.split(',')[1]
         
-        if(instance.data.fileInput1.files.length == 1){
-                instance.publishState('files_are_rendering', false)
+        if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length){
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+            
+            console.log("published the states 1")
     }
 
 
@@ -143,13 +154,24 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader2.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[1].name)
+        
+        
+        
 
-        instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg2 = reader2.result.split(',')[1]
         
-         if(instance.data.fileInput1.files.length == 2){
-                instance.publishState('files_are_rendering', false)
+         if(instance.data.fileInput1.files.length == instance.data.allFiles.length){
+              instance.publishState('all_files_filename' ,instance.data.allFilesFilename)             
+              instance.publishState('all_files' , instance.data.allFiles)
+              instance.publishState('files_are_rendering', false)
+
+
+                         console.log("published the states 2")
+
+
+             
     }
 
     }
@@ -163,13 +185,20 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader3.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[2].name)
         
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg3 = reader3.result.split(',')[1]
         
-        if(instance.data.fileInput1.files.length == 3){
-                instance.publishState('files_are_rendering', false)
+        if(instance.data.fileInput1.files.length == instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
+
+
     }
 
 
@@ -182,13 +211,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader4.result)
+         instance.data.allFilesFilename.push(instance.data.fileInput1.files[3].name)
         
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg4 = reader4.result.split(',')[1]
          
-         if(instance.data.fileInput1.files.length == 4){
-                instance.publishState('files_are_rendering', false)
+         if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
 
@@ -205,13 +239,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader5.result)
+         instance.data.allFilesFilename.push(instance.data.fileInput1.files[4].name)
         
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg5 = reader5.result.split(',')[1]
 
          if(instance.data.fileInput1.files.length == 5){
-                instance.publishState('files_are_rendering', false)
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
     }   
@@ -227,13 +266,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader6.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[5].name)  
         
         instance.publishState('all_files' , instance.data.allFiles)
         
         instance.data.base64OfImg6 = reader6.result.split(',')[1]
           
-          if(instance.data.fileInput1.files.length == 6){
-                instance.publishState('files_are_rendering', false)
+          if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
 
@@ -249,13 +293,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader7.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[6].name)
         
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg7 = reader7.result.split(',')[1]
           
-          if(instance.data.fileInput1.files.length == 7){
-                instance.publishState('files_are_rendering', false)
+          if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
 
@@ -272,13 +321,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader8.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[7].name)
         
         instance.publishState('all_files' , instance.data.allFiles)
   
         instance.data.base64OfImg8 = reader8.result.split(',')[1]
           
-          if(instance.data.fileInput1.files.length == 8){
-                instance.publishState('files_are_rendering', false)
+          if(instance.data.fileInput1.files.length == instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
 
@@ -294,13 +348,18 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader9.result)
-        
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[8].name)
+          
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg9 = reader9.result.split(',')[1]
           
-          if(instance.data.fileInput1.files.length == 9){
-                instance.publishState('files_are_rendering', false)
+          if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length){
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
 
 
@@ -316,13 +375,20 @@ else {
         
         //Set a Bubble variable equal to the readers result
         instance.data.allFiles.push(reader10.result)
+        instance.data.allFilesFilename.push(instance.data.fileInput1.files[9].name)  
+          
         
         instance.publishState('all_files' , instance.data.allFiles)
 
         instance.data.base64OfImg10 = reader10.result.split(',')[1]
           
-          if(instance.data.fileInput1.files.length == 10){
-                instance.publishState('files_are_rendering', false)
+          if(instance.data.fileInput1.files.length ==  instance.data.allFiles.length)
+          {
+            console.log(instance.data.allFiles.length + " input length " + instance.data.fileInput1.files.length)
+            instance.publishState('all_files_filename' ,instance.data.allFilesFilename)
+            instance.publishState('all_files' , instance.data.allFiles)
+            instance.publishState('files_are_rendering', false)
+
     }
            
        }
@@ -349,6 +415,11 @@ else {
             
             if (properties.file_type == 'All Files'){
                  
+            }
+            
+            if (properties.file_type == 'PDF'){
+                 
+                instance.data.fileInput1.setAttribute("accept", "application/pdf");
             }
             
             

@@ -27,12 +27,12 @@
         },
         "AAS": {
             "caption": "File type to choose",
-            "default_val": "Images",
+            "default_val": "All Files",
             "doc": "This is the File Type you want the users device to open to.",
             "editor": "Dropdown",
             "in_style": false,
             "name": "file_type",
-            "options": "Images,Audio,Videos,All Files",
+            "options": "All Files,Images,Audio,Videos,PDF",
             "rank": 1
         },
         "AAa": {
@@ -103,6 +103,16 @@
             },
             "name": "files_are_rendering",
             "value": "boolean"
+        },
+        "AAd": {
+            "caption": "All Files Filename",
+            "doc": "This is the file name of the document. For example, \"my-image.jpg\"",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "is_list": true,
+            "name": "all_files_filename",
+            "value": "text"
         }
     },
     "support_autobinding": false
