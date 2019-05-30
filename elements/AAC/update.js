@@ -130,7 +130,6 @@ else {
         instance.data.allFilesFilename.push(instance.data.fileInput1.files[0].name)
         
         
-        
         //Extracted the base64 part of the image and set a bubble variable equal to the base64 of the image.     
 
         instance.data.base64OfImg1 = reader1.result.split(',')[1]

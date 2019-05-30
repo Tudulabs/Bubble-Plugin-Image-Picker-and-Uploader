@@ -1,6 +1,4 @@
 {
     "caption": "Choose FIles",
-    "doc": "Initiate the file selection.",
-    "fields": {
-    }
+    "doc": "Initiate the file selection."
 }
