@@ -1,0 +1,14 @@
+{
+    "categories": {
+        "0": "technical",
+        "1": "data (things)"
+    },
+    "demo_page": "file-selector-and-uploader.bubbleapps.io/version-test",
+    "description": "This plugin allows you to add an element that let's a user choose a file from their device, and render it immediately without having to upload it. And you can upload the images on any workflow. Because who wants to waste storage space and burn capacity when you don't need to. \n\nYou can use any Bubble element \"On element clicked\" action to open the users file list.\n\nThe files the user selects will be saved into the \"FileSelector & Uploader\" \"All Files\" state.\n\nThen, you can show the files in any image, audio, or video element you want. And when your ready, you can upload it to Bubble on any workflow.\n\nThose uploaded files will then be saved in the FileSelector & Uploader \"UploadedFiles\" state. \n\nThen, you can can save those \"UploadedFiles\" into your Bubble Data Object.\n\nSee the demo here: https://file-selector-and-uploader.bubbleapps.io/version-test\n\nDemo editor: https://bubble.is/page?id=file-selector-and-uploader&tab=tabs-1",
+    "image": "//s3.amazonaws.com/appforest_uf/f1558748485185x254119627052673540/Image_picker.png",
+    "instructions": "",
+    "license": "commercial",
+    "link": "file-selector-and-uploader.bubbleapps.io/version-test",
+    "name": "Multi File Selector and Uploader",
+    "plugin_instructions": "1. Place the input element on your page. Make sure it's visible but and out of the way. It can be as small as you want.\n\n2. Choose a Group, Image, or Repeating Group that you want to display the Image's in by setting the state to \"File_Selector_&_Uploaders\" 'all_files\n\n3. Run the \"Choose Files\" Action on any \"ON ELEMENT CLICK\" event. You can run this on other Non-click events, but it will only work on Computers. Mobile does not support it. Check updates here: https://developer.mozilla.org/en-US/docs/Web/API/FileReader#Browser_compatibility\n\n\n4. Upload the Image(s) using the workflow action anywhere and return that subsequent link in the \"File_Selector_&_Uploaders\" 'uploaded_files state\""
+}

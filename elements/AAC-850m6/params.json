@@ -1,11 +1,12 @@
 {
     "add_is_visible": true,
+    "add_large_file_upload_properties": true,
     "category": "input forms",
     "default_dim": {
         "height": 50,
         "width": 50
     },
-    "display": "File Selector & Uploader",
+    "display": "Test File Selector & Uploader",
     "events": {
         "AAF": {
             "caption": "images are uploaded",
@@ -55,6 +56,15 @@
             "options": "40,35,30,25,20,15,10,5,3,2,1",
             "rank": 3,
             "value": "number"
+        },
+        "AAf": {
+            "caption": "Push image to state?",
+            "default_val": true,
+            "doc": "Push the image to the element state to be accessed. CAUTION: THIS CAN CAUSE LAG.",
+            "editor": "Checkbox",
+            "in_style": false,
+            "name": "push_image_to_state?",
+            "rank": 4
         }
     },
     "has_reset_fn": true,
