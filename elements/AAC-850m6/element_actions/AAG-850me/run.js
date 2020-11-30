@@ -1,7 +1,13 @@
 function(instance, properties, context) {
 
     
-    //TODO - ADD A FILE LIMITER THAT ONLY ALLOWS FILES OF 45mb OR LESS. BUBBLE CANT HANDLE MORE THAN THAT.
+    //TODO - Swap over to the new method instance.uploadFile(instance.data.filesSelected[0], callback, [attachTo], [progressCallback]) method
+
+    //This is Bubbles new upload method that allows for bigger files to be uploaded. It also gives us the ability to see the progress % of the upload
+    
+    //I should replace all of the old context.uploadContent with the new method, and expose the progressCallback method to users.
+    
+    //I don't see any real major issues coming from this
     
     instance.data.filesSelected = properties.files_to_upload.get(0,10)
     instance.data.uploaded_files = []
@@ -16,7 +22,6 @@ function(instance, properties, context) {
     instance.publishState('files_are_uploading' , true)
             if (instance.data.filesSelected.length >= 1){
 
-              //STILL NEED TO MAKE SURE THE FILE TYPE DOES NOT INCLUDE THE + IF IT DOES INCLUDE IT  
           instance.data.file1FileType = instance.data.filesSelected[0].substr(0, instance.data.filesSelected[0].indexOf(';'))
                 if (instance.data.file1FileType.includes('+'))
                     {
@@ -39,6 +44,7 @@ function(instance, properties, context) {
 
                   }
                       
+              
           }
                                )
                 

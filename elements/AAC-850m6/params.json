@@ -6,7 +6,7 @@
         "height": 50,
         "width": 50
     },
-    "display": "Test File Selector & Uploader",
+    "display": "New Test File Selector & Uploader",
     "events": {
         "AAF": {
             "caption": "images are uploaded",
